@@ -1,0 +1,1514 @@
+Welcome to the Emacs shell
+
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+animal
+1
+place
+0
+adjective
+0
+Error: there is an invalid format of '_xx_'animal~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+Error, the integer is invalid, which is more than the previous words~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+0
+1
+Error, the integer is invalid, which is more than the previous words~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+1
+0
+1
+Error, the integer is invalid, which is more than the previous words~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+1
+1
+1
+segmentation fault (core dumped)
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+free(): double free detected in tcache 2
+aborted (core dumped)
+~/ece551/060_eval2 $ valgrind ./story-step3 words.txt story2.txt
+==1685542== Memcheck, a memory error detector
+==1685542== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1685542== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1685542== Command: ./story-step3 words.txt story2.txt
+==1685542== 
+==1685542== Invalid free() / delete / delete[] / realloc()
+==1685542==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x109BB1: replace_one_line_category (rand_story.c:170)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Address 0x4a91b40 is 0 bytes inside a block of size 8 free'd
+==1685542==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x109BB1: replace_one_line_category (rand_story.c:170)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Block was alloc'd at
+==1685542==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x10996A: replace_one_line_category (rand_story.c:119)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542== 
+==1685542== Invalid read of size 8
+==1685542==    at 0x109A3A: replace_one_line_category (rand_story.c:135)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Address 0x4a91b40 is 0 bytes inside a block of size 8 free'd
+==1685542==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x109BB1: replace_one_line_category (rand_story.c:170)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Block was alloc'd at
+==1685542==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x10996A: replace_one_line_category (rand_story.c:119)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542== 
+==1685542== Invalid read of size 1
+==1685542==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x10A382: chooseWord (provided.c:18)
+==1685542==    by 0x109A56: replace_one_line_category (rand_story.c:137)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Address 0x4a91820 is 0 bytes inside a block of size 7 free'd
+==1685542==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x109BA5: replace_one_line_category (rand_story.c:168)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Block was alloc'd at
+==1685542==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x490B64E: strndup (strndup.c:43)
+==1685542==    by 0x1098BB: replace_one_line_category (rand_story.c:106)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542== 
+==1685542== Invalid read of size 1
+==1685542==    at 0x484FBE8: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x10A382: chooseWord (provided.c:18)
+==1685542==    by 0x109A56: replace_one_line_category (rand_story.c:137)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Address 0x4a91821 is 1 bytes inside a block of size 7 free'd
+==1685542==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x109BA5: replace_one_line_category (rand_story.c:168)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Block was alloc'd at
+==1685542==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x490B64E: strndup (strndup.c:43)
+==1685542==    by 0x1098BB: replace_one_line_category (rand_story.c:106)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542== 
+==1685542== Invalid free() / delete / delete[] / realloc()
+==1685542==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x109ABF: replace_one_line_category (rand_story.c:146)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Address 0x4a91b40 is 0 bytes inside a block of size 8 free'd
+==1685542==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x109BB1: replace_one_line_category (rand_story.c:170)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Block was alloc'd at
+==1685542==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1685542==    by 0x10996A: replace_one_line_category (rand_story.c:119)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542== 
+==1685542== Invalid write of size 8
+==1685542==    at 0x109ADB: replace_one_line_category (rand_story.c:147)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==1685542== 
+==1685542== 
+==1685542== Process terminating with default action of signal 11 (SIGSEGV)
+==1685542==  Access not within mapped region at address 0x8
+==1685542==    at 0x109ADB: replace_one_line_category (rand_story.c:147)
+==1685542==    by 0x109C7D: replace_all_line_category (rand_story.c:186)
+==1685542==    by 0x10941F: main (story-step3.c:13)
+==1685542==  If you believe this happened as a result of a stack
+==1685542==  overflow in your program's main thread (unlikely but
+==1685542==  possible), you can try to increase the size of the
+==1685542==  main thread stack using the --main-stacksize= flag.
+==1685542==  The main thread stack size used in this run was 10022912.
+==1685542== 
+==1685542== HEAP SUMMARY:
+==1685542==     in use at exit: 4,941 bytes in 19 blocks
+==1685542==   total heap usage: 83 allocs, 71 frees, 10,999 bytes allocated
+==1685542== 
+==1685542== LEAK SUMMARY:
+==1685542==    definitely lost: 0 bytes in 0 blocks
+==1685542==    indirectly lost: 0 bytes in 0 blocks
+==1685542==      possibly lost: 0 bytes in 0 blocks
+==1685542==    still reachable: 4,941 bytes in 19 blocks
+==1685542==         suppressed: 0 bytes in 0 blocks
+==1685542== Rerun with --leak-check=full to see details of leaked memory
+==1685542== 
+==1685542== For lists of detected and suppressed errors, rerun with: -s
+==1685542== ERROR SUMMARY: 17 errors from 6 contexts (suppressed: 0 from 0)
+segmentation fault (core dumped)
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ valgrind ./story-step3 words.txt story2.txt
+==1694596== Memcheck, a memory error detector
+==1694596== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1694596== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1694596== Command: ./story-step3 words.txt story2.txt
+==1694596== 
+==1694596== Invalid read of size 1
+==1694596==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1694596==    by 0x10A376: chooseWord (provided.c:18)
+==1694596==    by 0x109A56: replace_one_line_category (rand_story.c:137)
+==1694596==    by 0x109C71: replace_all_line_category (rand_story.c:186)
+==1694596==    by 0x10941F: main (story-step3.c:13)
+==1694596==  Address 0x4a91820 is 0 bytes inside a block of size 7 free'd
+==1694596==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1694596==    by 0x109BA5: replace_one_line_category (rand_story.c:168)
+==1694596==    by 0x109C71: replace_all_line_category (rand_story.c:186)
+==1694596==    by 0x10941F: main (story-step3.c:13)
+==1694596==  Block was alloc'd at
+==1694596==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1694596==    by 0x490B64E: strndup (strndup.c:43)
+==1694596==    by 0x1098BB: replace_one_line_category (rand_story.c:106)
+==1694596==    by 0x109C71: replace_all_line_category (rand_story.c:186)
+==1694596==    by 0x10941F: main (story-step3.c:13)
+==1694596== 
+==1694596== Invalid read of size 1
+==1694596==    at 0x484FBE8: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1694596==    by 0x10A376: chooseWord (provided.c:18)
+==1694596==    by 0x109A56: replace_one_line_category (rand_story.c:137)
+==1694596==    by 0x109C71: replace_all_line_category (rand_story.c:186)
+==1694596==    by 0x10941F: main (story-step3.c:13)
+==1694596==  Address 0x4a91821 is 1 bytes inside a block of size 7 free'd
+==1694596==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1694596==    by 0x109BA5: replace_one_line_category (rand_story.c:168)
+==1694596==    by 0x109C71: replace_all_line_category (rand_story.c:186)
+==1694596==    by 0x10941F: main (story-step3.c:13)
+==1694596==  Block was alloc'd at
+==1694596==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1694596==    by 0x490B64E: strndup (strndup.c:43)
+==1694596==    by 0x1098BB: replace_one_line_category (rand_story.c:106)
+==1694596==    by 0x109C71: replace_all_line_category (rand_story.c:186)
+==1694596==    by 0x10941F: main (story-step3.c:13)
+==1694596== 
+Once upon a time, there was a walrus. This dragon lived in a very
+peaceful cave. One day, it left its scary cave and met a dragon.
+==1694596== 
+==1694596== HEAP SUMMARY:
+==1694596==     in use at exit: 56 bytes in 2 blocks
+==1694596==   total heap usage: 183 allocs, 181 frees, 15,514 bytes allocated
+==1694596== 
+==1694596== LEAK SUMMARY:
+==1694596==    definitely lost: 56 bytes in 2 blocks
+==1694596==    indirectly lost: 0 bytes in 0 blocks
+==1694596==      possibly lost: 0 bytes in 0 blocks
+==1694596==    still reachable: 0 bytes in 0 blocks
+==1694596==         suppressed: 0 bytes in 0 blocks
+==1694596== Rerun with --leak-check=full to see details of leaked memory
+==1694596== 
+==1694596== For lists of detected and suppressed errors, rerun with: -s
+==1694596== ERROR SUMMARY: 27 errors from 2 contexts (suppressed: 0 from 0)
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+Category 1 not found
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+Category 1 not found
+1-------~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+animal-------
+Category 1 not found
+1-------~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+n = 1
+previous_len = 1
+previous_data = 1
+Category 1 not found
+1-------~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+n = 1
+previous_len = 1
+previous_data = animal
+animal-------Once upon a time, there was a walrus. This dragon lived in a very
+n = 2
+previous_len = 2
+previous_data = adjective
+previous_data = place
+adjective-------n = 2
+previous_len = 3
+previous_data = adjective
+previous_data = place
+previous_data = adjective
+place-------peaceful cave. One day, it left its scary cave and met a dragon.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+Once upon a time, there was a walrus. This dragon lived in a very
+peaceful cave. One day, it left its scary cave and met a dragon.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+Once upon a time, there was a walrus. This dragon lived in a very
+peaceful cave. One day, it left its scary cave and met a dragon.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+replace = animal
+Once upon a time, there was a walrus. This dragon lived in a very
+replace = adjective
+replace = place
+peaceful cave. One day, it left its scary cave and met a dragon.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+Once upon a time, there was a walrus. This  lived in a very
+peculiar cave. One day, it left its   and met a walrus.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+replace = 
+Once upon a time, there was a walrus. This  lived in a very
+replace = 
+replace = 
+peculiar cave. One day, it left its   and met a walrus.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+replace = 
+len - n = 
+Once upon a time, there was a walrus. This  lived in a very
+replace = 
+len - n = 
+replace = 
+len - n = 
+peculiar cave. One day, it left its   and met a walrus.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+previous_i = 
+replace = 
+len - n = 
+Once upon a time, there was a walrus. This  lived in a very
+previous_i = 
+previous_i = 
+replace = 
+len - n = 
+previous_i = 
+previous_i = 
+previous_i = 
+replace = 
+len - n = 
+peculiar cave. One day, it left its   and met a walrus.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+new = 
+previous_i = 
+replace = 
+len - n = 
+Once upon a time, there was a walrus. This  lived in a very
+new = 
+new = 
+previous_i = 
+previous_i = 
+replace = 
+len - n = 
+previous_i = 
+previous_i = 
+previous_i = 
+replace = 
+len - n = 
+new = 
+peculiar cave. One day, it left its   and met a walrus.
+~/ece551/060_eval2 $ make 
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+new = walrus
+previous_i = walrus
+replace = walrus
+len - n = walrus
+Once upon a time, there was a walrus. This walrus lived in a very
+new = peculiar
+new = cave
+previous_i = peculiar
+previous_i = cave
+replace = peculiar
+len - n = peculiar
+previous_i = peculiar
+previous_i = cave
+previous_i = 
+replace = cave
+len - n = cave
+new = walrus
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+new = walrus
+Once upon a time, there was a walrus. This walrus lived in a very
+new = peculiar
+new = cave
+new = walrus
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+Once upon a time, there was a walrus. This walrus lived in a very
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+~/ece551/060_eval2 $ valgrind ./story-step3 words.txt story2.txt
+==1753450== Memcheck, a memory error detector
+==1753450== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1753450== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1753450== Command: ./story-step3 words.txt story2.txt
+==1753450== 
+Once upon a time, there was a walrus. This walrus lived in a very
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+==1753450== 
+==1753450== HEAP SUMMARY:
+==1753450==     in use at exit: 105 bytes in 9 blocks
+==1753450==   total heap usage: 190 allocs, 181 frees, 15,719 bytes allocated
+==1753450== 
+==1753450== LEAK SUMMARY:
+==1753450==    definitely lost: 56 bytes in 2 blocks
+==1753450==    indirectly lost: 49 bytes in 7 blocks
+==1753450==      possibly lost: 0 bytes in 0 blocks
+==1753450==    still reachable: 0 bytes in 0 blocks
+==1753450==         suppressed: 0 bytes in 0 blocks
+==1753450== Rerun with --leak-check=full to see details of leaked memory
+==1753450== 
+==1753450== For lists of detected and suppressed errors, rerun with: -s
+==1753450== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+rand_story.c: In function ‘replace_one_line_category’:
+rand_story.c:158:12: error: ‘blank_right’ undeclared (first use in this function)
+  158 |     line = blank_right + 1;
+      |            ^~~~~~~~~~~
+rand_story.c:158:12: note: each undeclared identifier is reported only once for each function it appears in
+rand_story.c:159:10: error: ‘category’ undeclared (first use in this function); did you mean ‘category_t’?
+  159 |     free(category);
+      |          ^~~~~~~~
+      |          category_t
+rand_story.c: At top level:
+rand_story.c:164:1: error: data definition has no type or storage class [-Werror]
+  164 | replace_line = realloc(replace_line, sizeof(*replace_line) * (count + 1));
+      | ^~~~~~~~~~~~
+rand_story.c:164:1: error: type defaults to ‘int’ in declaration of ‘replace_line’ [-Werror=implicit-int]
+rand_story.c:164:45: error: invalid type argument of unary ‘*’ (have ‘int’)
+  164 | replace_line = realloc(replace_line, sizeof(*replace_line) * (count + 1));
+      |                                             ^~~~~~~~~~~~~
+rand_story.c:164:63: error: ‘count’ undeclared here (not in a function)
+  164 | replace_line = realloc(replace_line, sizeof(*replace_line) * (count + 1));
+      |                                                               ^~~~~
+rand_story.c:164:24: error: passing argument 1 of ‘realloc’ makes pointer from integer without a cast [-Werror=int-conversion]
+  164 | replace_line = realloc(replace_line, sizeof(*replace_line) * (count + 1));
+      |                        ^~~~~~~~~~~~
+      |                        |
+      |                        int
+In file included from rand_story.h:5,
+                 from rand_story.c:1:
+/usr/include/stdlib.h:551:29: note: expected ‘void *’ but argument is of type ‘int’
+  551 | extern void *realloc (void *__ptr, size_t __size)
+      |                       ~~~~~~^~~~~
+rand_story.c:165:1: error: data definition has no type or storage class [-Werror]
+  165 | replace_line[count] = '\0';
+      | ^~~~~~~~~~~~
+rand_story.c:165:1: error: type defaults to ‘int’ in declaration of ‘replace_line’ [-Werror=implicit-int]
+rand_story.c:167:8: error: expected declaration specifiers or ‘...’ before string constant
+  167 | printf("%s", replace_line);
+      |        ^~~~
+rand_story.c:167:14: error: expected declaration specifiers or ‘...’ before ‘replace_line’
+  167 | printf("%s", replace_line);
+      |              ^~~~~~~~~~~~
+rand_story.c:168:1: error: expected identifier or ‘(’ before ‘return’
+  168 | return replace_line;
+      | ^~~~~~
+rand_story.c:169:1: error: expected identifier or ‘(’ before ‘}’ token
+  169 | }
+      | ^
+rand_story.c: In function ‘replace_one_line_category’:
+rand_story.c:162:1: error: control reaches end of non-void function [-Werror=return-type]
+  162 | }
+      | ^
+cc1: all warnings being treated as errors
+make: *** [Makefile:8: rand_story.o] Error 1
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ valgrind ./story-step3 words.txt story2.txt
+==1782197== Memcheck, a memory error detector
+==1782197== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1782197== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1782197== Command: ./story-step3 words.txt story2.txt
+==1782197== 
+==1782197== Invalid free() / delete / delete[] / realloc()
+==1782197==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1782197==    by 0x109B73: replace_one_line_category (rand_story.c:160)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197==  Address 0x4a918c0 is 0 bytes inside a block of size 8 free'd
+==1782197==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1782197==    by 0x109B73: replace_one_line_category (rand_story.c:160)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197==  Block was alloc'd at
+==1782197==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1782197==    by 0x10994F: replace_one_line_category (rand_story.c:115)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197== 
+==1782197== Invalid read of size 8
+==1782197==    at 0x109A6E: replace_one_line_category (rand_story.c:137)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197==  Address 0x4a918c0 is 0 bytes inside a block of size 8 free'd
+==1782197==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1782197==    by 0x109B73: replace_one_line_category (rand_story.c:160)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197==  Block was alloc'd at
+==1782197==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1782197==    by 0x10994F: replace_one_line_category (rand_story.c:115)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197== 
+==1782197== Invalid free() / delete / delete[] / realloc()
+==1782197==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1782197==    by 0x109A93: replace_one_line_category (rand_story.c:139)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197==  Address 0x4a918c0 is 0 bytes inside a block of size 8 free'd
+==1782197==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1782197==    by 0x109B73: replace_one_line_category (rand_story.c:160)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197==  Block was alloc'd at
+==1782197==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1782197==    by 0x10994F: replace_one_line_category (rand_story.c:115)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197== 
+==1782197== Invalid write of size 8
+==1782197==    at 0x109AB8: replace_one_line_category (rand_story.c:140)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==1782197== 
+==1782197== 
+==1782197== Process terminating with default action of signal 11 (SIGSEGV)
+==1782197==  Access not within mapped region at address 0x8
+==1782197==    at 0x109AB8: replace_one_line_category (rand_story.c:140)
+==1782197==    by 0x109C3C: replace_all_line_category (rand_story.c:176)
+==1782197==    by 0x10943F: main (story-step3.c:13)
+==1782197==  If you believe this happened as a result of a stack
+==1782197==  overflow in your program's main thread (unlikely but
+==1782197==  possible), you can try to increase the size of the
+==1782197==  main thread stack using the --main-stacksize= flag.
+==1782197==  The main thread stack size used in this run was 10022912.
+==1782197== 
+==1782197== HEAP SUMMARY:
+==1782197==     in use at exit: 4,949 bytes in 21 blocks
+==1782197==   total heap usage: 78 allocs, 64 frees, 10,718 bytes allocated
+==1782197== 
+==1782197== LEAK SUMMARY:
+==1782197==    definitely lost: 7 bytes in 1 blocks
+==1782197==    indirectly lost: 0 bytes in 0 blocks
+==1782197==      possibly lost: 0 bytes in 0 blocks
+==1782197==    still reachable: 4,942 bytes in 20 blocks
+==1782197==         suppressed: 0 bytes in 0 blocks
+==1782197== Rerun with --leak-check=full to see details of leaked memory
+==1782197== 
+==1782197== For lists of detected and suppressed errors, rerun with: -s
+==1782197== ERROR SUMMARY: 10 errors from 4 contexts (suppressed: 0 from 0)
+segmentation fault (core dumped)
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+free(): double free detected in tcache 2
+aborted (core dumped)
+~/ece551/060_eval2 $ make 
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+Once upon a time, there was a walrus. This walrus lived in a very
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+~/ece551/060_eval2 $ valgrind ./story-step3 words.txt story2.txt
+==1783547== Memcheck, a memory error detector
+==1783547== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1783547== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1783547== Command: ./story-step3 words.txt story2.txt
+==1783547== 
+Once upon a time, there was a walrus. This walrus lived in a very
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+==1783547== 
+==1783547== HEAP SUMMARY:
+==1783547==     in use at exit: 105 bytes in 9 blocks
+==1783547==   total heap usage: 190 allocs, 181 frees, 15,719 bytes allocated
+==1783547== 
+==1783547== LEAK SUMMARY:
+==1783547==    definitely lost: 56 bytes in 2 blocks
+==1783547==    indirectly lost: 49 bytes in 7 blocks
+==1783547==      possibly lost: 0 bytes in 0 blocks
+==1783547==    still reachable: 0 bytes in 0 blocks
+==1783547==         suppressed: 0 bytes in 0 blocks
+==1783547== Rerun with --leak-check=full to see details of leaked memory
+==1783547== 
+==1783547== For lists of detected and suppressed errors, rerun with: -s
+==1783547== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ valgrind ./story-step3 words.txt story2.txt
+==1786236== Memcheck, a memory error detector
+==1786236== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1786236== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1786236== Command: ./story-step3 words.txt story2.txt
+==1786236== 
+==1786236== Invalid free() / delete / delete[] / realloc()
+==1786236==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109BB0: replace_one_line_category (rand_story.c:162)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Address 0x4a91910 is 0 bytes inside a block of size 7 free'd
+==1786236==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109BB0: replace_one_line_category (rand_story.c:162)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Block was alloc'd at
+==1786236==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B60E: strdup (strdup.c:42)
+==1786236==    by 0x109991: replace_one_line_category (rand_story.c:116)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236== 
+==1786236== Invalid read of size 1
+==1786236==    at 0x484ED76: __strlen_sse2 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B602: strdup (strdup.c:41)
+==1786236==    by 0x109AD5: replace_one_line_category (rand_story.c:140)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Address 0x4a91910 is 0 bytes inside a block of size 7 free'd
+==1786236==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109BB0: replace_one_line_category (rand_story.c:162)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Block was alloc'd at
+==1786236==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B60E: strdup (strdup.c:42)
+==1786236==    by 0x109991: replace_one_line_category (rand_story.c:116)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236== 
+==1786236== Invalid read of size 1
+==1786236==    at 0x484ED84: __strlen_sse2 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B602: strdup (strdup.c:41)
+==1786236==    by 0x109AD5: replace_one_line_category (rand_story.c:140)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Address 0x4a91911 is 1 bytes inside a block of size 7 free'd
+==1786236==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109BB0: replace_one_line_category (rand_story.c:162)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Block was alloc'd at
+==1786236==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B60E: strdup (strdup.c:42)
+==1786236==    by 0x109991: replace_one_line_category (rand_story.c:116)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236== 
+==1786236== Invalid read of size 2
+==1786236==    at 0x484FF60: memcpy@GLIBC_2.2.5 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109AD5: replace_one_line_category (rand_story.c:140)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Address 0x4a91910 is 0 bytes inside a block of size 7 free'd
+==1786236==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109BB0: replace_one_line_category (rand_story.c:162)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Block was alloc'd at
+==1786236==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B60E: strdup (strdup.c:42)
+==1786236==    by 0x109991: replace_one_line_category (rand_story.c:116)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236== 
+==1786236== Invalid read of size 2
+==1786236==    at 0x484FF6F: memcpy@GLIBC_2.2.5 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109AD5: replace_one_line_category (rand_story.c:140)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Address 0x4a91914 is 4 bytes inside a block of size 7 free'd
+==1786236==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109BB0: replace_one_line_category (rand_story.c:162)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Block was alloc'd at
+==1786236==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B60E: strdup (strdup.c:42)
+==1786236==    by 0x109991: replace_one_line_category (rand_story.c:116)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236== 
+==1786236== Invalid read of size 1
+==1786236==    at 0x484FF90: memcpy@GLIBC_2.2.5 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109AD5: replace_one_line_category (rand_story.c:140)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Address 0x4a91916 is 6 bytes inside a block of size 7 free'd
+==1786236==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109BB0: replace_one_line_category (rand_story.c:162)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Block was alloc'd at
+==1786236==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B60E: strdup (strdup.c:42)
+==1786236==    by 0x109991: replace_one_line_category (rand_story.c:116)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236== 
+==1786236== Invalid read of size 1
+==1786236==    at 0x109B1D: replace_one_line_category (rand_story.c:143)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Address 0x4a91910 is 0 bytes inside a block of size 7 free'd
+==1786236==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109BB0: replace_one_line_category (rand_story.c:162)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Block was alloc'd at
+==1786236==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B60E: strdup (strdup.c:42)
+==1786236==    by 0x109991: replace_one_line_category (rand_story.c:116)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236== 
+==1786236== Invalid read of size 1
+==1786236==    at 0x109B0A: replace_one_line_category (rand_story.c:145)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Address 0x4a91910 is 0 bytes inside a block of size 7 free'd
+==1786236==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109BB0: replace_one_line_category (rand_story.c:162)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Block was alloc'd at
+==1786236==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B60E: strdup (strdup.c:42)
+==1786236==    by 0x109991: replace_one_line_category (rand_story.c:116)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236== 
+Once upon a time, there was a walrus. This walrus lived in a very
+==1786236== Invalid read of size 8
+==1786236==    at 0x484FF0D: memcpy@GLIBC_2.2.5 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109AD5: replace_one_line_category (rand_story.c:140)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Address 0x4a93100 is 0 bytes inside a block of size 9 free'd
+==1786236==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x109BB0: replace_one_line_category (rand_story.c:162)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236==  Block was alloc'd at
+==1786236==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1786236==    by 0x490B60E: strdup (strdup.c:42)
+==1786236==    by 0x109991: replace_one_line_category (rand_story.c:116)
+==1786236==    by 0x109C8B: replace_all_line_category (rand_story.c:179)
+==1786236==    by 0x10943F: main (story-step3.c:13)
+==1786236== 
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+==1786236== 
+==1786236== HEAP SUMMARY:
+==1786236==     in use at exit: 56 bytes in 2 blocks
+==1786236==   total heap usage: 190 allocs, 344 frees, 15,719 bytes allocated
+==1786236== 
+==1786236== LEAK SUMMARY:
+==1786236==    definitely lost: 56 bytes in 2 blocks
+==1786236==    indirectly lost: 0 bytes in 0 blocks
+==1786236==      possibly lost: 0 bytes in 0 blocks
+==1786236==    still reachable: 0 bytes in 0 blocks
+==1786236==         suppressed: 0 bytes in 0 blocks
+==1786236== Rerun with --leak-check=full to see details of leaked memory
+==1786236== 
+==1786236== For lists of detected and suppressed errors, rerun with: -s
+==1786236== ERROR SUMMARY: 225 errors from 9 contexts (suppressed: 0 from 0)
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+p_i = walrus
+Once upon a time, there was a walrus. This walrus lived in a very
+p_i = peculiar
+p_i = peculiar
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = walrus
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = walrus
+p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = walrus
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0len = 0p_i = walrus
+len = 1p_i = walrus
+len = 1p_i = walrus
+len = 1p_i = walrus
+len = 1p_i = walrus
+len = 1p_i = walrus
+len = 1p_i = walrus
+len = 1p_i = walrus
+len = 1p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2p_i = walrus
+p_i = walrus
+len = 2Once upon a time, there was a walrus. This walrus lived in a very
+p_i = peculiar
+len = 1p_i = peculiar
+len = 1p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+len = 2p_i = peculiar
+p_i = cave
+p_i = peculiar
+len = 3p_i = peculiar
+p_i = cave
+p_i = peculiar
+len = 3p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+len = 4p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = walrus
+len = 5p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = walrus
+len = 5p_i = peculiar
+p_i = cave
+p_i = peculiar
+p_i = cave
+p_i = walrus
+len = 5peculiar cave. One day, it left its peculiar cave and met a walrus.
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ ./story-step3 words.txt story2.txt
+Once upon a time, there was a walrus. This walrus lived in a very
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+~/ece551/060_eval2 $ valgrind ./story-step3 words.txt story2.txt
+==1799268== Memcheck, a memory error detector
+==1799268== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1799268== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1799268== Command: ./story-step3 words.txt story2.txt
+==1799268== 
+Once upon a time, there was a walrus. This walrus lived in a very
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+==1799268== 
+==1799268== HEAP SUMMARY:
+==1799268==     in use at exit: 49 bytes in 7 blocks
+==1799268==   total heap usage: 190 allocs, 183 frees, 15,719 bytes allocated
+==1799268== 
+==1799268== LEAK SUMMARY:
+==1799268==    definitely lost: 49 bytes in 7 blocks
+==1799268==    indirectly lost: 0 bytes in 0 blocks
+==1799268==      possibly lost: 0 bytes in 0 blocks
+==1799268==    still reachable: 0 bytes in 0 blocks
+==1799268==         suppressed: 0 bytes in 0 blocks
+==1799268== Rerun with --leak-check=full to see details of leaked memory
+==1799268== 
+==1799268== For lists of detected and suppressed errors, rerun with: -s
+==1799268== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+~/ece551/060_eval2 $ valgrind ./story-step3 words.txt story2.txt
+==1802353== Memcheck, a memory error detector
+==1802353== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1802353== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1802353== Command: ./story-step3 words.txt story2.txt
+==1802353== 
+Once upon a time, there was a walrus. This walrus lived in a very
+peculiar cave. One day, it left its peculiar cave and met a walrus.
+==1802353== 
+==1802353== HEAP SUMMARY:
+==1802353==     in use at exit: 0 bytes in 0 blocks
+==1802353==   total heap usage: 190 allocs, 190 frees, 15,719 bytes allocated
+==1802353== 
+==1802353== All heap blocks were freed -- no leaks are possible
+==1802353== 
+==1802353== For lists of detected and suppressed errors, rerun with: -s
+==1802353== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+~/ece551/060_eval2 $ git add .
+~/ece551/060_eval2 $ git commit -a -m " step3 "
+[master d32e1bb]  step3
+ 7 files changed, 423 insertions(+), 465 deletions(-)
+ rewrite 060_eval2/*eshell* (94%)
+ create mode 100644 060_eval2/story-step3.c
+~/ece551/060_eval2 $ git push
+To /usr/local/assignments/yw540/ece551
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to '/usr/local/assignments/yw540/ece551'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+~/ece551/060_eval2 $ git pull
+remote: Enumerating objects: 7, done.        
+remote: Counting objects: 100% (7/7), done.        
+remote: Compressing objects: 100% (4/4), done.        
+remote: Total 4 (delta 3), reused 0 (delta 0), pack-reused 0        
+Unpacking objects: 100% (4/4), 338 bytes | 67.00 KiB/s, done.
+From /usr/local/assignments/yw540/ece551
+   89e2eb9..aadfdec  master     -> origin/master
+error: Terminal is dumb, but EDITOR unset
+Not committing merge; use 'git commit' to complete the merge.
+~/ece551/060_eval2 $ git add .
+~/ece551/060_eval2 $ git commit -a -m " step3 "
+[master ee71c02]  step3
+~/ece551/060_eval2 $ git push
+Enumerating objects: 32, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 3.85 KiB | 3.85 MiB/s, done.
+Total 14 (delta 10), reused 0 (delta 0), pack-reused 0
+To /usr/local/assignments/yw540/ece551
+   aadfdec..ee71c02  master -> master
+~/ece551/060_eval2 $ grade
+Checking 'git status'....
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Checking HEAD commit ID....
+Commit ID to grade: ee71c028b769291b1134b2e9cfc692966f6a7218
+
+Grading this assignment requires 1 eval tokens
+You have 3000 eval remaining
+Do you wish to continue? y
+Grading happening now
+~/ece551/060_eval2 $ git pull
+Already up to date.
+~/ece551/060_eval2 $ git pull
+remote: Enumerating objects: 7, done.        
+remote: Counting objects: 100% (7/7), done.        
+remote: Compressing objects: 100% (4/4), done.        
+remote: Total 4 (delta 3), reused 0 (delta 0), pack-reused 0        
+Unpacking objects: 100% (4/4), 555 bytes | 111.00 KiB/s, done.
+From /usr/local/assignments/yw540/ece551
+   ee71c02..efaec9e  master     -> origin/master
+Updating ee71c02..efaec9e
+Fast-forward
+ 060_eval2/grade.txt | 29 +++++++++++++++++++++++------
+ 1 file changed, 23 insertions(+), 6 deletions(-)
+~/ece551/060_eval2 $ git add .
+~/ece551/060_eval2 $ git commit -a -m "step3"
+[master 65c07dd] step3
+ 2 files changed, 6 insertions(+)
+ create mode 100644 060_eval2/mystory3.txt
+~/ece551/060_eval2 $ git push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 538 bytes | 538.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0
+To /usr/local/assignments/yw540/ece551
+   efaec9e..65c07dd  master -> master
+~/ece551/060_eval2 $ grade
+Checking 'git status'....
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Checking HEAD commit ID....
+Commit ID to grade: 65c07dd2d60f0bdf66e77ac6936f7c85a4e64a11
+
+Grading this assignment requires 1 eval tokens
+You have 2999 eval remaining
+Do you wish to continue? y
+Grading happening now
+~/ece551/060_eval2 $ git pull
+remote: Enumerating objects: 7, done.        
+remote: Counting objects: 100% (7/7), done.        
+remote: Compressing objects: 100% (4/4), done.        
+remote: Total 4 (delta 3), reused 0 (delta 0), pack-reused 0        
+Unpacking objects: 100% (4/4), 464 bytes | 232.00 KiB/s, done.
+From /usr/local/assignments/yw540/ece551
+   65c07dd..ff72958  master     -> origin/master
+Updating 65c07dd..ff72958
+Fast-forward
+ 060_eval2/grade.txt | 26 ++++++++++++++++++++++----
+ 1 file changed, 22 insertions(+), 4 deletions(-)
+~/ece551/060_eval2 $ ls
+#*eshell*#       #story-step3.c#  mystory3.txt             story-step1     story.txt
+#.gitignore#     #tests.txt#      provided.h               story-step1.c   story2.txt
+#Makefile#       *eshell*         provided.o               story-step1.c~  tests.txt
+#mystory.txt#    *eshell*~        rand_story.c             story-step2     tests.txt~
+#mystory3.txt#   Makefile         rand_story.c~            story-step2.c   words.txt
+#rand_story.c#   Makefile~        rand_story.h             story-step2.c~  
+#rand_story.h#   README           rand_story.h~            story-step3     
+#story-step1.c#  grade.txt        rand_story.o             story-step3.c   
+#story-step2.c#  mystory.txt      rand_story_oldversion.c  story-step3.c~  
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
+gcc -o story-step4 story-step4.o rand_story.o provided.o
+rm story-step4.o
+~/ece551/060_eval2 $ ./story-step4 -n words.txt story2.txt
+Once upon a time, there was a walrus. This walrus lived in a very
+segmentation fault (core dumped)
+~/ece551/060_eval2 $ valgrind ./story-step4 -n words.txt story2.txt
+==2143107== Memcheck, a memory error detector
+==2143107== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2143107== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2143107== Command: ./story-step4 -n words.txt story2.txt
+==2143107== 
+Once upon a time, there was a walrus. This walrus lived in a very
+==2143107== Invalid read of size 8
+==2143107==    at 0x109B44: check_category (rand_story.c:109)
+==2143107==    by 0x109CCB: replace_one_line_category (rand_story.c:147)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Address 0x4a8e268 is 8 bytes inside a block of size 16 free'd
+==2143107==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x109ADA: cat_unused (rand_story.c:104)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Block was alloc'd at
+==2143107==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x10A4DA: read_category_word (rand_story.c:287)
+==2143107==    by 0x1094CE: main (story-step4.c:29)
+==2143107== 
+==2143107== Invalid read of size 8
+==2143107==    at 0x109B07: check_category (rand_story.c:110)
+==2143107==    by 0x109CCB: replace_one_line_category (rand_story.c:147)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Address 0x4a8e260 is 0 bytes inside a block of size 16 free'd
+==2143107==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x109ADA: cat_unused (rand_story.c:104)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Block was alloc'd at
+==2143107==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x10A4DA: read_category_word (rand_story.c:287)
+==2143107==    by 0x1094CE: main (story-step4.c:29)
+==2143107== 
+==2143107== Invalid read of size 8
+==2143107==    at 0x10A79D: chooseWord (provided.c:17)
+==2143107==    by 0x109CE9: replace_one_line_category (rand_story.c:148)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Address 0x4a8e268 is 8 bytes inside a block of size 16 free'd
+==2143107==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x109ADA: cat_unused (rand_story.c:104)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Block was alloc'd at
+==2143107==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x10A4DA: read_category_word (rand_story.c:287)
+==2143107==    by 0x1094CE: main (story-step4.c:29)
+==2143107== 
+==2143107== Invalid read of size 8
+==2143107==    at 0x10A746: chooseWord (provided.c:18)
+==2143107==    by 0x109CE9: replace_one_line_category (rand_story.c:148)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Address 0x4a8e260 is 0 bytes inside a block of size 16 free'd
+==2143107==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x109ADA: cat_unused (rand_story.c:104)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Block was alloc'd at
+==2143107==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x10A4DA: read_category_word (rand_story.c:287)
+==2143107==    by 0x1094CE: main (story-step4.c:29)
+==2143107== 
+==2143107== Invalid read of size 8
+==2143107==    at 0x10A777: chooseWord (provided.c:19)
+==2143107==    by 0x109CE9: replace_one_line_category (rand_story.c:148)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Address 0x4a8e260 is 0 bytes inside a block of size 16 free'd
+==2143107==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x109ADA: cat_unused (rand_story.c:104)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Block was alloc'd at
+==2143107==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x10A4DA: read_category_word (rand_story.c:287)
+==2143107==    by 0x1094CE: main (story-step4.c:29)
+==2143107== 
+==2143107== Invalid read of size 8
+==2143107==    at 0x109823: cat_unused (rand_story.c:73)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Address 0x4a8e268 is 8 bytes inside a block of size 16 free'd
+==2143107==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x109ADA: cat_unused (rand_story.c:104)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Block was alloc'd at
+==2143107==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x10A4DA: read_category_word (rand_story.c:287)
+==2143107==    by 0x1094CE: main (story-step4.c:29)
+==2143107== 
+==2143107== Invalid read of size 8
+==2143107==    at 0x10986B: cat_unused (rand_story.c:79)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Address 0x4a8e268 is 8 bytes inside a block of size 16 free'd
+==2143107==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x109ADA: cat_unused (rand_story.c:104)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Block was alloc'd at
+==2143107==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x10A4DA: read_category_word (rand_story.c:287)
+==2143107==    by 0x1094CE: main (story-step4.c:29)
+==2143107== 
+==2143107== Invalid read of size 8
+==2143107==    at 0x1098AF: cat_unused (rand_story.c:83)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Address 0x4a8e260 is 0 bytes inside a block of size 16 free'd
+==2143107==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x109ADA: cat_unused (rand_story.c:104)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Block was alloc'd at
+==2143107==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x10A4DA: read_category_word (rand_story.c:287)
+==2143107==    by 0x1094CE: main (story-step4.c:29)
+==2143107== 
+==2143107== Invalid free() / delete / delete[] / realloc()
+==2143107==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x109ADA: cat_unused (rand_story.c:104)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Address 0x4a8e260 is 0 bytes inside a block of size 16 free'd
+==2143107==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x109ADA: cat_unused (rand_story.c:104)
+==2143107==    by 0x109D10: replace_one_line_category (rand_story.c:151)
+==2143107==    by 0x10A069: replace_all_line_category (rand_story.c:219)
+==2143107==    by 0x1094F0: main (story-step4.c:30)
+==2143107==  Block was alloc'd at
+==2143107==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2143107==    by 0x10A4DA: read_category_word (rand_story.c:287)
+==2143107==    by 0x1094CE: main (story-step4.c:29)
+==2143107== 
+No words in category
+==2143107== 
+==2143107== HEAP SUMMARY:
+==2143107==     in use at exit: 1,080 bytes in 35 blocks
+==2143107==   total heap usage: 133 allocs, 99 frees, 13,446 bytes allocated
+==2143107== 
+==2143107== LEAK SUMMARY:
+==2143107==    definitely lost: 88 bytes in 2 blocks
+==2143107==    indirectly lost: 224 bytes in 18 blocks
+==2143107==      possibly lost: 9 bytes in 1 blocks
+==2143107==    still reachable: 759 bytes in 14 blocks
+==2143107==         suppressed: 0 bytes in 0 blocks
+==2143107== Rerun with --leak-check=full to see details of leaked memory
+==2143107== 
+==2143107== For lists of detected and suppressed errors, rerun with: -s
+==2143107== ERROR SUMMARY: 19 errors from 9 contexts (suppressed: 0 from 0)
+~/ece551/060_eval2 $ make
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
+gcc -o story-step4 story-step4.o rand_story.o provided.o
+rm story-step4.o
+~/ece551/060_eval2 $ ./story-step4 -n words.txt story2.txt
+Once upon a time, there was a walrus. This walrus lived in a very
+segmentation fault (core dumped)
+~/ece551/060_eval2 $ make
+make: Nothing to be done for 'all'.
+~/ece551/060_eval2 $ 

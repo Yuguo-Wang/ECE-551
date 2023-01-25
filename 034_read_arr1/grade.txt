@@ -1,0 +1,11 @@
+Grading at 09/20/2022:01:23:35.902222
+For commit ID 0b699f7da5260372f499623dcdca95ad16276cf1
+Grading at Mon Sep 19 09:23:35 PM EDT 2022
+Attempting to compile test.c
+gcc -std=gnu99 -pedantic -Wall -Werror -c test.c
+gcc -o test test.o
+compiled
+Your file matched the expected output
+Your output matched what we expected
+
+Overall Grade: A

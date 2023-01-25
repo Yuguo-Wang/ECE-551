@@ -1,0 +1,29 @@
+Welcome to the Emacs shell
+
+~/ece551/056_kvs $ make
+gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 kv.c
+gcc -Wall -Werror -std=gnu99 -pedantic -ggdb3 -o kv_test kv_test.o kv.o
+~/ece551/056_kvs $ ./kv_test 
+segmentation fault (core dumped)
+~/ece551/056_kvs $ make
+gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 kv.c
+gcc -Wall -Werror -std=gnu99 -pedantic -ggdb3 -o kv_test kv_test.o kv.o
+~/ece551/056_kvs $ ./kv_test 
+segmentation fault (core dumped)
+~/ece551/056_kvs $ make
+gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 kv.c
+gcc -Wall -Werror -std=gnu99 -pedantic -ggdb3 -o kv_test kv_test.o kv.o
+~/ece551/056_kvs $ ./kv_test 
+segmentation fault (core dumped)
+~/ece551/056_kvs $ make
+gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 kv_test.c
+gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 kv.c
+gcc -Wall -Werror -std=gnu99 -pedantic -ggdb3 -o kv_test kv_test.o kv.o
+~/ece551/056_kvs $ ./kv_test 
+segmentation fault (core dumped)
+~/ece551/056_kvs $ make 
+gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 kv.c
+gcc -Wall -Werror -std=gnu99 -pedantic -ggdb3 -o kv_test kv_test.o kv.o
+~/ece551/056_kvs $ ./kv_test 
+segmentation fault (core dumped)
+~/ece551/056_kvs $ 

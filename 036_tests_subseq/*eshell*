@@ -1,0 +1,248 @@
+Welcome to the Emacs shell
+
+~/ece551/036_tests_subseq $ ls
+#Makefile#       README    maxSeq.c~    run_all.sh     test-subseq.c~
+#test-subseq.c#  maxSeq    maxSeq.o     test-subseq    test-subseq.o
+Makefile         maxSeq.c  next-README  test-subseq.c  
+~/ece551/036_tests_subseq $ ./run_all.sh 
+-------------------------------------
+**Testing correct implementation **
+
+-------------------------------------
+**Testing broken implementation 1**
+GG
+-------------------------------------
+**Testing broken implementation 2**
+GG
+-------------------------------------
+**Testing broken implementation 3**
+Your test program did not identify /usr/local/ece551/subseq/subseq3.o as broken!
+~/ece551/036_tests_subseq $ cat test-subseq.c
+#include <stdio.h>
+#include <stdlib.h>
+
+size_t maxSeq(int * array, size_t n);
+
+void test(int * array, size_t n, size_t res) {
+  if (res != maxSeq(array, n)) {
+    printf("GG");
+    exit(EXIT_FAILURE);
+  }
+}
+
+int main(void) {
+  int arr_0[1] = {2};
+  int arr_1[2] = {2, 3};
+  int arr_2[7] = {2, 2, 4, 9, 8, 2, 2};
+  int arr_3[5] = {0, 0, 0, 0, 0};
+  int arr_4[5] = {-2, -1, 1, 3, -1};
+
+  test(arr_0, 1, 1);
+  test(arr_1, 2, 2);
+  test(arr_2, 7, 3);
+  test(arr_3, 5, 1);
+  test(arr_4, 5, 4);
+  exit(EXIT_SUCCESS);
+}
+~/ece551/036_tests_subseq $ ls
+#Makefile#       README    maxSeq.c~    run_all.sh     test-subseq.c~
+#test-subseq.c#  maxSeq    maxSeq.o     test-subseq    test-subseq.o
+Makefile         maxSeq.c  next-README  test-subseq.c  
+~/ece551/036_tests_subseq $ ./run_all.sh 
+-------------------------------------
+**Testing correct implementation **
+
+-------------------------------------
+**Testing broken implementation 1**
+GG
+-------------------------------------
+**Testing broken implementation 2**
+GG
+-------------------------------------
+**Testing broken implementation 3**
+Your test program did not identify /usr/local/ece551/subseq/subseq3.o as broken!
+~/ece551/036_tests_subseq $ ./run_all.sh 
+-------------------------------------
+**Testing correct implementation **
+GGYour test program falsely failed the correct implementation!
+~/ece551/036_tests_subseq $ ./run_all.sh 
+-------------------------------------
+**Testing correct implementation **
+GGYour test program falsely failed the correct implementation!
+~/ece551/036_tests_subseq $ ./run_all.sh 
+-------------------------------------
+**Testing correct implementation **
+test-subseq.c: In function ‘main’:
+test-subseq.c:20:7: error: unused variable ‘arr_6’ [-Werror=unused-variable]
+   20 |   int arr_6[] = {2, 2, 4, 4, 5, 6, 6};
+      |       ^~~~~
+cc1: all warnings being treated as errors
+Could not compile test-subseq.c
+~/ece551/036_tests_subseq $ ./run_all.sh 
+-------------------------------------
+**Testing correct implementation **
+GGYour test program falsely failed the correct implementation!
+~/ece551/036_tests_subseq $ ./run_all.sh 
+-------------------------------------
+**Testing correct implementation **
+
+-------------------------------------
+**Testing broken implementation 1**
+GG
+-------------------------------------
+**Testing broken implementation 2**
+GG
+-------------------------------------
+**Testing broken implementation 3**
+GG
+-------------------------------------
+**Testing broken implementation 4**
+GG
+-------------------------------------
+**Testing broken implementation 5**
+GG
+-------------------------------------
+**Testing broken implementation 6**
+GG
+-------------------------------------
+**Testing broken implementation 7**
+GG
+-------------------------------------
+**Testing broken implementation 8**
+GG
+-------------------------------------
+**Testing broken implementation 9**
+GG
+-------------------------------------
+**Testing broken implementation 10**
+GG
+-------------------------------------
+**Testing broken implementation 11**
+GG
+~/ece551/036_tests_subseq $ git add .
+~/ece551/036_tests_subseq $ git commit -a -m "Did assignment 36"
+[master 973b67e] Did assignment 36
+ 7 files changed, 166 insertions(+)
+ create mode 100644 036_tests_subseq/*eshell*
+ create mode 100644 036_tests_subseq/Makefile
+ create mode 100755 036_tests_subseq/maxSeq
+ create mode 100644 036_tests_subseq/maxSeq.c
+ create mode 100644 036_tests_subseq/maxSeq.o
+ create mode 100644 036_tests_subseq/test-subseq.c
+ create mode 100644 036_tests_subseq/test-subseq.o
+~/ece551/036_tests_subseq $ git push
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (10/10), 5.94 KiB | 2.97 MiB/s, done.
+Total 10 (delta 2), reused 0 (delta 0), pack-reused 0
+To /usr/local/assignments/yw540/ece551
+   d509a6a..973b67e  master -> master
+~/ece551/036_tests_subseq $ grade
+Checking 'git status'....
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Checking HEAD commit ID....
+Commit ID to grade: 973b67eb1b015fb27a6490eef92aa5eba1ffd50d
+
+Grading this assignment requires 1 c tokens
+You have 100 c remaining
+Do you wish to continue? y
+Grading happening now
+~/ece551/036_tests_subseq $ view-grades 
+Assignment           | Grade OnTime P | Date Graded  | Commit ID Graded
+
+000_submit           | Pass 1       * | Aug 29 16:54 | e473f0
+001_app_rq           | Pass 1       * | Aug 29 18:12 | 507ca7
+002_ch01_rq          | Pass 1       * | Aug 29 21:47 | 209579
+003_algorithm        | Pass 1       * | Aug 29 22:36 | af4f36
+004_ch02_rq          | Pass 1       * | Aug 31 13:14 | 6632cb
+005_read1            | Pass 1       * | Aug 31 14:23 | e98301
+006_read2            | Pass 1       * | Aug 31 14:53 | d0352d
+007_fix_syntax       | Pass 1       * | Aug 31 15:13 | c674c4
+008_ch03_rq          | Pass 1       * | Sep  1 16:43 | 750566
+009_read3            | Pass 1       * | Sep  1 20:33 | 9c9cd2
+010_read4            | Pass 1       * | Sep  5 01:00 | 405888
+011_numbers          | Pass 1       * | Sep  5 01:34 | c6f559
+012_comp_arith       | Pass 1       * | Sep  5 10:20 | 1bbef1
+013_complex_ty       | Pass 1       * | Sep  5 11:13 | 99dd90
+014_ch04_rq          | Pass 1       * | Sep  5 13:08 | 42b132
+015_code1            | A    1       * | Sep  5 13:29 | 2d1ecd
+016_code2            | A    1       * | Sep  5 13:47 | 66ae3f
+017_squares          | A    1       * | Sep  5 14:31 | bcbf46
+018_read_squares     | Pass 1       * | Sep  5 14:39 | e038b4
+019_ch05_rq          | Pass 1       * | Sep  5 20:32 | 389eb2
+020_retirement       | A    1       * | Sep  5 23:34 | e7f550
+021_rectangle        | A    1       * | Sep  6 00:49 | 71188d
+022_ch06_rq          | Pass 1       * | Sep  7 14:09 | fee5ed
+023_tests_match5     | Pass 1       * | Sep 12 01:26 | e04af5
+024_tests_prime      | Pass 1       * | Sep 12 14:12 | 66d9d6
+025_debugging        | Pass 1       * | Sep 12 17:36 | 808aab
+026_ch07_rq          | Pass 1       * | Sep 12 21:17 | e57844
+027_read_rec1        | Pass 1       * | Sep 12 21:42 | 70b119
+028_tests_power      | Pass 1       * | Sep 14 13:02 | 8a0bf6
+029_power_rec        | A    1       * | Sep 15 13:17 | f325d5
+030_ch08_rq          | Pass 1       * | Sep 15 23:13 | 6cca2b
+031_read_ptr1        | Pass 1       * | Sep 19 12:48 | b9325a
+032_read_ptr2        | Pass 1       * | Sep 19 14:26 | 33e32d
+033_ch09_rq          | Pass 1       * | Sep 19 20:20 | 02bf89
+034_read_arr1        | Pass 1       * | Sep 19 21:23 | 0b699f
+035_array_max        | A    1       * | Sep 19 22:52 | 714a09
+036_tests_subseq     |                | Sep 19 22:52 | No sub
+~/ece551/036_tests_subseq $ view-grades 
+Assignment           | Grade OnTime P | Date Graded  | Commit ID Graded
+
+000_submit           | Pass 1       * | Aug 29 16:54 | e473f0
+001_app_rq           | Pass 1       * | Aug 29 18:12 | 507ca7
+002_ch01_rq          | Pass 1       * | Aug 29 21:47 | 209579
+003_algorithm        | Pass 1       * | Aug 29 22:36 | af4f36
+004_ch02_rq          | Pass 1       * | Aug 31 13:14 | 6632cb
+005_read1            | Pass 1       * | Aug 31 14:23 | e98301
+006_read2            | Pass 1       * | Aug 31 14:53 | d0352d
+007_fix_syntax       | Pass 1       * | Aug 31 15:13 | c674c4
+008_ch03_rq          | Pass 1       * | Sep  1 16:43 | 750566
+009_read3            | Pass 1       * | Sep  1 20:33 | 9c9cd2
+010_read4            | Pass 1       * | Sep  5 01:00 | 405888
+011_numbers          | Pass 1       * | Sep  5 01:34 | c6f559
+012_comp_arith       | Pass 1       * | Sep  5 10:20 | 1bbef1
+013_complex_ty       | Pass 1       * | Sep  5 11:13 | 99dd90
+014_ch04_rq          | Pass 1       * | Sep  5 13:08 | 42b132
+015_code1            | A    1       * | Sep  5 13:29 | 2d1ecd
+016_code2            | A    1       * | Sep  5 13:47 | 66ae3f
+017_squares          | A    1       * | Sep  5 14:31 | bcbf46
+018_read_squares     | Pass 1       * | Sep  5 14:39 | e038b4
+019_ch05_rq          | Pass 1       * | Sep  5 20:32 | 389eb2
+020_retirement       | A    1       * | Sep  5 23:34 | e7f550
+021_rectangle        | A    1       * | Sep  6 00:49 | 71188d
+022_ch06_rq          | Pass 1       * | Sep  7 14:09 | fee5ed
+023_tests_match5     | Pass 1       * | Sep 12 01:26 | e04af5
+024_tests_prime      | Pass 1       * | Sep 12 14:12 | 66d9d6
+025_debugging        | Pass 1       * | Sep 12 17:36 | 808aab
+026_ch07_rq          | Pass 1       * | Sep 12 21:17 | e57844
+027_read_rec1        | Pass 1       * | Sep 12 21:42 | 70b119
+028_tests_power      | Pass 1       * | Sep 14 13:02 | 8a0bf6
+029_power_rec        | A    1       * | Sep 15 13:17 | f325d5
+030_ch08_rq          | Pass 1       * | Sep 15 23:13 | 6cca2b
+031_read_ptr1        | Pass 1       * | Sep 19 12:48 | b9325a
+032_read_ptr2        | Pass 1       * | Sep 19 14:26 | 33e32d
+033_ch09_rq          | Pass 1       * | Sep 19 20:20 | 02bf89
+034_read_arr1        | Pass 1       * | Sep 19 21:23 | 0b699f
+035_array_max        | A    1       * | Sep 19 22:52 | 714a09
+036_tests_subseq     | Pass 1       * | Sep 20 13:57 | 973b67
+~/ece551/036_tests_subseq $ git pull
+remote: Enumerating objects: 6, done.        
+remote: Counting objects: 100% (6/6), done.        
+remote: Compressing objects: 100% (4/4), done.        
+remote: Total 4 (delta 2), reused 0 (delta 0), pack-reused 0        
+Unpacking objects: 100% (4/4), 542 bytes | 542.00 KiB/s, done.
+From /usr/local/assignments/yw540/ece551
+   973b67e..20b974e  master     -> origin/master
+Updating 973b67e..20b974e
+Fast-forward
+ 036_tests_subseq/grade.txt | 54 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+ create mode 100644 036_tests_subseq/grade.txt
+~/ece551/036_tests_subseq $ 

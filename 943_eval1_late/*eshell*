@@ -1,0 +1,16 @@
+Welcome to the Emacs shell
+
+~/ece551/043_eval1 $ make printCountries 
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
+~/ece551/043_eval1 $ ./printCountries population.csv 
+segmentation fault (core dumped)
+~/ece551/043_eval1 $ jobs -l
+~/ece551/043_eval1 $ make printCountries 
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
+~/ece551/043_eval1 $ ./printCountries population.csv 
+segmentation fault (core dumped)
+~/ece551/043_eval1 $ make printCountries 
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
+~/ece551/043_eval1 $ ./printCountries population.csv 
+segmentation fault (core dumped)
+~/ece551/043_eval1 $ 

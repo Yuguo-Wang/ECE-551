@@ -1,0 +1,17 @@
+abcde fghjk
+aabcd bbcde
+aaacd bbbde
+aaaab bbbbc
+aaaaa bbbbc
+aaaba bbbbb
+aaaba bbbbb ccccc
+aaaba
+aaabass bbbbb
+aaab bbbbb
+aaabb bsbbbb
+aaabb bbb
+aaaaa bbbbb
+aaaaa AAAAa
+abcde !!!!!
+aabbb cccdd
+

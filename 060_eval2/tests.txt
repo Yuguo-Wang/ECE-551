@@ -1,0 +1,51 @@
+#error
+story-step1 invalid.txt
+story-step1 story.txt mystory.txt
+story-step2 words.txt story.txt
+story-step2 story.txt
+story-step3 story.txt
+story-step3 words.txt story3.txt
+story-step3 words.txt invalid.txt
+story-step3 words.txt story5.txt
+story-step3 words.txt story4.txt
+story-step3 words.txt story6.txt
+story-step3 words.txt story8.txt
+story-step4 words.txt story8.txt
+story-step4 -n  words.txt story8.txt
+story-step1 story6.txt
+story-step1 story5.txt
+story-step3 story9.txt
+story-step3 story10.txt
+story-step4 -n words.txt story9.txt
+story-step4 -n words.txt story10.txt
+story-step4 words.txt story9.txt
+story-step4 words.txt story10.txt
+story-step3 words.txt story11.txt
+story-step4 -n words.txt story11.txt
+story-step3 w.txt story12.txt
+story-step3 words.txt storyless.txt
+story-step4 -n words.txt storyless.txt
+
+
+#success
+story-step1 mystory.txt
+story-step1 story.txt
+story-step2 words.txt
+story-step2 words2.txt
+story-step2 words6.txt
+story-step3 words2.txt story2.txt
+story-step3 words.txt story2.txt
+story-step3 words.txt mystory3.txt
+story-step4 words.txt story2.txt
+story-step4 -n words.txt story2.txt
+story-step4 -n words2.txt story2.txt
+
+story-step4 words.txt story2.txt
+story-step4 words3.txt story10.txt
+story-step4 -n words3.txt story10.txt
+
+#error
+story-step3 words2.txt story6.txt
+story-step4 -n words2.txt story6.txt
+story-step4 words2.txt story6.txt
+

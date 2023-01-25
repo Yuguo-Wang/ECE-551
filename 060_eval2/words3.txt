@@ -1,0 +1,8 @@
+animal:dragon
+animal:dog
+place:caves
+adjective:peculiar
+adjective:scary
+adjective:peaceful
+:There should be nothing in the parenthesis
+nothing:

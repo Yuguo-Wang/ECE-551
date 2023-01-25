@@ -1,0 +1,754 @@
+Welcome to the Emacs shell
+
+~/ece551/048_tests_rot_matrix $ ls
+#input.txt#   #input4.txt#  input.txt   input2.txt~  input4.txt   run_all.sh
+#input3.txt#  README        input2.txt  input3.txt   next-README  
+~/ece551/048_tests_rot_matrix $ ls
+#input.txt#   #input4.txt#  input.txt   input2.txt~  input4.txt  next-README
+#input3.txt#  README        input2.txt  input3.txt   input5.txt  run_all.sh
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ls
+#input.txt#   #input4.txt#  input.txt   input2.txt~  input4.txt  next-README  tests.txt
+#input3.txt#  README        input2.txt  input3.txt   input5.txt  run_all.sh   
+~/ece551/048_tests_rot_matrix $ cat input2.txt 
+abcadefjas
+baskcbvhsidfv
+sdh
+bakcbsj
+haskdhakudrr
+hukasdhljdv
+jhsd   hus
+haklhipand
+   dakhkkd
+nkawdknkkm
+
+~/ece551/048_tests_rot_matrix $ cat input3.txt 
+abcadefjas
+baskcbvhsi
+sdh??
+bakcbsj
+h#sk/hakud
+hukasdhljd
+jhsd   hus
+haklh.pand
+   dakhkkd
+nkawdknkkm
+~/ece551/048_tests_rot_matrix $ cat input7.txt 
+hauksdoajd
+hauksdoajd
+hauksdoajd
+hauksdoajd
+hauksdoajd
+hauksdoajd
+hauksdoajd
+hauksdoajd
+hauksdofjf
+eauksdoajd
+ff~/ece551/048_tests_rot_matrix $ cat input7.txt 
+00000000: 6861 756b 7364 6f61 6a64 0a68 6175 6b73  hauksdoajd.hauks
+00000010: 646f 616a 640a 6861 756b 7364 6f61 6a64  doajd.hauksdoajd
+00000020: 0a68 610d 6b73 646f 616a 640a 6861 756b  .ha.ksdoajd.hauk
+4 0a68 6175 6b73 646f 616a  sdoafd.hauksdoaj
+00000040: 640a 6861 756b 7364 6f61 6a64 0a68 6175  d.hauksdoajd.hau6ff000050: 6b73 646f 616a 640a 6861 756b 7364 6f66  ksdoajd.hauksdof
+00000060: 6a66 0a65 6175 6b73 646f 616a 640a 6666  jf.eauksdoajd.ff
+~/ece551/048_tests_rot_matrix $ rm input7.txt 
+~/ece551/048_tests_rot_matrix $ rm input7.txt\~ 
+~/ece551/048_tests_rot_matrix $ ls
+#input.txt#   #input5.txt#  README      input2.txt~  input5.txt   tests.txt
+#input3.txt#  #input7.txt#  input.txt   input3.txt   next-README  tests.txt~
+#input4.txt#  #tests.txt#   input2.txt  input4.txt   run_all.sh   
+~/ece551/048_tests_rot_matrix $ ls
+#input.txt#   #input5.txt#  README      input2.txt~  input5.txt   tests.txt
+#input3.txt#  #input7.txt#  input.txt   input3.txt   next-README  tests.txt~
+#input4.txt#  #tests.txt#   input2.txt  input4.txt   run_all.sh   
+~/ece551/048_tests_rot_matrix $ rm -rf #input7.txt#
+~/ece551/048_tests_rot_matrix $ ls
+#input.txt#   #input5.txt#  README      input2.txt~  input5.txt   tests.txt
+#input3.txt#  #input7.txt#  input.txt   input3.txt   next-README  tests.txt~
+#input4.txt#  #tests.txt#   input2.txt  input4.txt   run_all.sh   
+~/ece551/048_tests_rot_matrix $ rm -rf #*
+~/ece551/048_tests_rot_matrix $ ls
+#input.txt#   #input5.txt#  README      input2.txt~  input5.txt   tests.txt
+#input3.txt#  #input7.txt#  input.txt   input3.txt   next-README  tests.txt~
+#input4.txt#  #tests.txt#   input2.txt  input4.txt   run_all.sh   
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ cat input4.txt 
+abcadefjas
+baskcbvhsi
+sdhsdfgegt
+bakcbsjdsa
+haskdhakud
+hukasdhljd
+jhsdbfshus
+haklhipand
+dfsdakhkkd
+nkawdknkkm
+djaskuidha
+~/ece551/048_tests_rot_matrix $ cat input5.txt 
+~/ece551/048_tests_rot_matrix $ cat input6.txt 
+/usr/bin/cat: input6.txt: No such file or directory
+~/ece551/048_tests_rot_matrix $ ls
+#input.txt#   README      input2.txt~  input4.txt  input8.txt   run_all.sh
+#input4.txt#  input.txt   input3.txt   input5.txt  input8.txt~  tests.txt
+#input5.txt#  input2.txt  input3.txt~  input7.txt  next-README  tests.txt~
+~/ece551/048_tests_rot_matrix $ cat input5.txt 
+~/ece551/048_tests_rot_matrix $ input7.txt
+input7.txt: command not found
+~/ece551/048_tests_rot_matrix $ cat input7.txt
+00000000: 6861 756b 7364 6f61 6a64 0a68 6175 6b73  hauksdoajd.hauks
+00000010: 646f 616a 640a 6861 756b 7364 6f61 6a64  doajd.hauksdoajd
+00000020: 0a68 610d 6b73 646f 616a 640a 6861 756b  .ha.ksdoajd.hauk
+4 0a68 6175 6b73 646f 616a  sdoafd.hauksdoaj
+00000040: 640a 6861 756b 7364 6f61 6a64 0a68 6175  d.hauksdoajd.hau6ff000050: 6b73 646f 616a 640a 6861 756b 7364 6f66  ksdoajd.hauksdof
+00000060: 6a66 0a65 6175 6b73 646f 616a 640a 6666  jf.eauksdoajd.ff
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ cat input2.txt 
+abcadefjas
+baskcbvhsidfv
+sdh
+bakcbsj
+haskdhakudrr
+hukasdhljdv
+jhsd   hus
+haklhipand
+   dakhkkd
+nkawdknkkm
+
+~/ece551/048_tests_rot_matrix $ cat input4.txt 
+abcadefjas
+baskcbvhsi
+sdhsdfgegt
+bakcbsjdsa
+haskdhakud
+hukasdhljd
+jhsdbfshus
+haklhipand
+dfsdakhkkd
+nkawdknkkm
+djaskuidha
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ 
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+***Your tests failed to show that rotateMatrix7 was broken!
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ cat input4.txt 
+abcadefjas
+baskcbvhsi
+sdhsdfgegt
+bakcbsjdsa
+haskdhakud
+hukasdhljd
+jhsdbfshus
+haklhipand
+dfsdakhkkd
+nkawdknkkm
+djaskuidha
+huaksdhakus
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ cat input5.txt 
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+***Your tests failed to show that rotateMatrix5 was broken!
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ls
+#*eshell*#    #input5.txt#  README       input3.txt   input5.txt   input9.txt   tests.txt~
+#input.txt#   #input9.txt#  input.txt    input3.txt~  input7.txt   next-README  
+#input3.txt#  *eshell*      input2.txt   input4.txt   input8.txt   run_all.sh   
+#input4.txt#  *eshell*~     input2.txt~  input4.txt~  input8.txt~  tests.txt    
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ cat input7.txt 
+00000000: 6861 756b 7364 6f61 6a64 0a68 6175 6b73  hauksdoajd.hauks
+00000010: 646f 616a 640a 6861 756b 7364 6f61 6a64  doajd.hauksdoajd
+00000020: 0a68 610d 6b73 646f 616a 640a 6861 756b  .ha.ksdoajd.hauk
+4 0a68 6175 6b73 646f 616a  sdoafd.hauksdoaj
+00000040: 640a 6861 756b 7364 6f61 6a64 0a68 6175  d.hauksdoajd.hau6ff000050: 6b73 646f 616a 640a 6861 756b 7364 6f66  ksdoajd.hauksdof
+00000060: 6a66 0a65 6175 6b73 646f 616a 640a 6666  jf.eauksdoajd.ff
+~/ece551/048_tests_rot_matrix $ rm -rf input.txt input2.txt input3.txt
+~/ece551/048_tests_rot_matrix $ ls
+#*eshell*#    #input4.txt#  *eshell*   input2.txt~  input4.txt~  input8.txt   next-README  tests.txt~
+#input.txt#   #input5.txt#  *eshell*~  input3.txt~  input5.txt   input8.txt~  run_all.sh   
+#input3.txt#  #input9.txt#  README     input4.txt   input7.txt   input9.txt   tests.txt    
+~/ece551/048_tests_rot_matrix $ rm -rf input7.txt 
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+***Your tests failed to show that rotateMatrix3 was broken!
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ cat input8.txt 
+gajdhaskud
+gajdhaskud
+gajdhaskud
+gajdhaskud
+gajdhaskud
+ud
+gajdhaskud
+gajdhaskud
+gajdhaskud
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+***Your tests failed to show that rotateMatrix2 was broken!
+Checking rotateMatrix3
+***Your tests failed to show that rotateMatrix3 was broken!
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ cat input9.txt 
+aoisdhiass
+oahdiahnss
+oahdiahnss
+oahdiahnss
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+***Your tests failed to show that rotateMatrix4 was broken!
+Checking rotateMatrix5
+Checking rotateMatrix6
+***Your tests failed to show that rotateMatrix6 was broken!
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+***Your tests failed to show that rotateMatrix4 was broken!
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ 
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ cat input4.txt 
+abcadefjas
+baskcbvhsi
+sdhsdfgegt
+bakcbsjdsa
+haskdhakud
+hukasdhljd
+jhsdbfshus
+haklhipand
+dfsdakhkkd
+nkawdknkkm
+djaskuidha
+huaksdhakus
+~/ece551/048_tests_rot_matrix $ ls
+#*eshell*#    #input5.txt#  *eshell*   input2.txt~  input4.txt   input8.txt   input9.txt~  tests.txt
+#input.txt#   #input9.txt#  *eshell*~  input3.txt   input4.txt~  input8.txt~  next-README  tests.txt~
+#input4.txt#  #tests.txt#   README     input3.txt~  input5.txt   input9.txt   run_all.sh   
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ls
+#*eshell*#    #input5.txt#  *eshell*   input2.txt~  input4.txt   input8.txt   input9.txt~  tests.txt
+#input.txt#   #input9.txt#  *eshell*~  input3.txt   input4.txt~  input8.txt~  next-README  tests.txt~
+#input4.txt#  #tests.txt#   README     input3.txt~  input5.txt   input9.txt   run_all.sh   
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ 
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ 
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ cat input4.txt 
+abcadefjas
+baskcbvhsi
+sdhsdfgegt
+bakcbsjdsa
+haskdhakud
+hukasdhljd
+jhsdbfshus
+haklhipand
+dfsdakhkkd
+nkawdknkkm
+djaskuidha
+huaksdhakus
+~/ece551/048_tests_rot_matrix $ cat input5.txt 
+~/ece551/048_tests_rot_matrix $ cat input6
+/usr/bin/cat: input6: No such file or directory
+~/ece551/048_tests_rot_matrix $ cat input7.txt
+/usr/bin/cat: input7.txt: No such file or directory
+~/ece551/048_tests_rot_matrix $ 	cat input8.txt 
+gajdhaskud
+gajdhaskud
+gajdhaskud
+gajdhaskud
+gajdhaskud
+ud
+gajdhaskud
+gajdhaskud
+gajdhaskud
+~/ece551/048_tests_rot_matrix $ ls
+#*eshell*#    #input5.txt#  *eshell*~    input3.txt~  input8.txt   next-README
+#input.txt#   #input9.txt#  README       input4.txt   input8.txt~  run_all.sh
+#input3.txt#  #tests.txt#   input2.txt~  input4.txt~  input9.txt   tests.txt
+#input4.txt#  *eshell*      input3.txt   input5.txt   input9.txt~  tests.txt~
+~/ece551/048_tests_rot_matrix $ cat input2.txt 
+ahdiusahdf
+ahdiusahdf
+ahdiusahdf
+ahdiusahdf
+ahdiusahdf
+ahdiusahdf
+ahdiusahdf
+ahdiusahdf
+ahdiusahdf
+ahdiusahdf
+y�~/ece551/048_tests_rot_matrix $ rm -rf input3.txt
+~/ece551/048_tests_rot_matrix $ ls
+#*eshell*#    #input5.txt#  *eshell*~   input2.txt~  input4.txt~  input8.txt~  next-README  tests.txt~
+#input.txt#   #input9.txt#  README      input3.txt~  input5.txt   input9.txt   run_all.sh   
+#input4.txt#  *eshell*      input2.txt  input4.txt   input8.txt   input9.txt~  tests.txt    
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+***Your tests failed to show that rotateMatrix1 was broken!
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+***Your tests failed to show that rotateMatrix8 was broken!
+~/ece551/048_tests_rot_matrix $ ./run_all.sh 
+Checking rotateMatrix1
+Checking rotateMatrix2
+Checking rotateMatrix3
+Checking rotateMatrix4
+Checking rotateMatrix5
+Checking rotateMatrix6
+Checking rotateMatrix7
+Checking rotateMatrix8
+~/ece551/048_tests_rot_matrix $ git add 。
+fatal: pathspec '。' did not match any files
+~/ece551/048_tests_rot_matrix $ git add .
+~/ece551/048_tests_rot_matrix $ git commit -a -m "Did assignment 48"
+[master ccded68] Did assignment 48
+ 8 files changed, 591 insertions(+)
+ create mode 100644 048_tests_rot_matrix/*eshell*
+ create mode 100644 048_tests_rot_matrix/input1.txt
+ create mode 100644 048_tests_rot_matrix/input2.txt
+ create mode 100644 048_tests_rot_matrix/input4.txt
+ create mode 100644 048_tests_rot_matrix/input5.txt
+ create mode 100644 048_tests_rot_matrix/input8.txt
+ create mode 100644 048_tests_rot_matrix/input9.txt
+ create mode 100644 048_tests_rot_matrix/tests.txt
+~/ece551/048_tests_rot_matrix $ git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (11/11), 1.97 KiB | 1.97 MiB/s, done.
+Total 11 (delta 1), reused 0 (delta 0), pack-reused 0
+To /usr/local/assignments/yw540/ece551
+   b59e1f7..ccded68  master -> master
+~/ece551/048_tests_rot_matrix $ grade
+Checking 'git status'....
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Checking HEAD commit ID....
+Commit ID to grade: ccded681e00bb8984172a1abef8e8f93731fb2be
+
+Grading this assignment requires 1 c tokens
+You have 100 c remaining
+Do you wish to continue? y
+Grading happening now
+~/ece551/048_tests_rot_matrix $ view-grades
+Assignment           | Grade OnTime P | Date Graded  | Commit ID Graded
+
+000_submit           | Pass 1       * | Aug 29 16:54 | e473f0
+001_app_rq           | Pass 1       * | Aug 29 18:12 | 507ca7
+002_ch01_rq          | Pass 1       * | Aug 29 21:47 | 209579
+003_algorithm        | Pass 1       * | Aug 29 22:36 | af4f36
+004_ch02_rq          | Pass 1       * | Aug 31 13:14 | 6632cb
+005_read1            | Pass 1       * | Aug 31 14:23 | e98301
+006_read2            | Pass 1       * | Aug 31 14:53 | d0352d
+007_fix_syntax       | Pass 1       * | Aug 31 15:13 | c674c4
+008_ch03_rq          | Pass 1       * | Sep  1 16:43 | 750566
+009_read3            | Pass 1       * | Sep  1 20:33 | 9c9cd2
+010_read4            | Pass 1       * | Sep  5 01:00 | 405888
+011_numbers          | Pass 1       * | Sep  5 01:34 | c6f559
+012_comp_arith       | Pass 1       * | Sep  5 10:20 | 1bbef1
+013_complex_ty       | Pass 1       * | Sep  5 11:13 | 99dd90
+014_ch04_rq          | Pass 1       * | Sep  5 13:08 | 42b132
+015_code1            | A    1       * | Sep  5 13:29 | 2d1ecd
+016_code2            | A    1       * | Sep  5 13:47 | 66ae3f
+017_squares          | A    1       * | Sep  5 14:31 | bcbf46
+018_read_squares     | Pass 1       * | Sep  5 14:39 | e038b4
+019_ch05_rq          | Pass 1       * | Sep  5 20:32 | 389eb2
+020_retirement       | A    1       * | Sep  5 23:34 | e7f550
+021_rectangle        | A    1       * | Sep  6 00:49 | 71188d
+022_ch06_rq          | Pass 1       * | Sep  7 14:09 | fee5ed
+023_tests_match5     | Pass 1       * | Sep 12 01:26 | e04af5
+024_tests_prime      | Pass 1       * | Sep 12 14:12 | 66d9d6
+025_debugging        | Pass 1       * | Sep 12 17:36 | 808aab
+026_ch07_rq          | Pass 1       * | Sep 12 21:17 | e57844
+027_read_rec1        | Pass 1       * | Sep 12 21:42 | 70b119
+028_tests_power      | Pass 1       * | Sep 14 13:02 | 8a0bf6
+029_power_rec        | A    1       * | Sep 15 13:17 | f325d5
+030_ch08_rq          | Pass 1       * | Sep 15 23:13 | 6cca2b
+031_read_ptr1        | Pass 1       * | Sep 19 12:48 | b9325a
+032_read_ptr2        | Pass 1       * | Sep 19 14:26 | 33e32d
+033_ch09_rq          | Pass 1       * | Sep 19 20:20 | 02bf89
+034_read_arr1        | Pass 1       * | Sep 19 21:23 | 0b699f
+035_array_max        | A    1       * | Sep 19 22:52 | 714a09
+036_tests_subseq     | Pass 1       * | Sep 20 13:57 | 973b67
+037_array_subseq     | A    1       * | Sep 20 14:01 | 813986
+038_ch10_rq          | Pass 1       * | Sep 24 23:41 | 7734ef
+039_read_arr2        | A    1       * | Sep 28 00:05 | 4fa93c
+040_id_mem_errors    | A    1       * | Sep 28 00:27 | e10147
+041_reverse_str      | A    1       * | Sep 28 01:01 | f4c5af
+042_bits_arr         | A    1       * | Sep 28 01:19 | cefd6d
+043_eval1            |      1         | Sep 28 08:02 | No sub
+044_ch11_rq          | Pass 1       * | Sep 28 02:01 | 56ee2c
+045_read_arr3        | A    1       * | Sep 28 14:51 | 8e1ba3
+046_read_encr        | A    1       * | Sep 29 20:20 | 663e90
+047_break_encr       | A    1       * | Sep 29 22:47 | 7615b2
+048_tests_rot_matrix | Pass 1       * | Oct  1 20:55 | ccded6
+~/ece551/048_tests_rot_matrix $ git pull
+remote: Enumerating objects: 11, done.        
+remote: Counting objects: 100% (11/11), done.        
+remote: Compressing objects: 100% (9/9), done.        
+remote: Total 9 (delta 3), reused 0 (delta 0), pack-reused 0        
+Unpacking objects: 100% (9/9), 1023 bytes | 341.00 KiB/s, done.
+From /usr/local/assignments/yw540/ece551
+   ccded68..b9c3760  master     -> origin/master
+Updating ccded68..b9c3760
+Fast-forward
+ 048_tests_rot_matrix/grade.txt | 22 ++++++++++++++++++++++
+ 049_rot_matrix/README          | 32 ++++++++++++++++++++++++++++++++
+ 049_rot_matrix/sample.out      | 10 ++++++++++
+ 049_rot_matrix/sample.txt      | 10 ++++++++++
+ 4 files changed, 74 insertions(+)
+ create mode 100644 048_tests_rot_matrix/grade.txt
+ create mode 100644 049_rot_matrix/README
+ create mode 100644 049_rot_matrix/sample.out
+ create mode 100644 049_rot_matrix/sample.txt
+~/ece551/048_tests_rot_matrix $ 
